@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*Sets space around the logo and sets logo dimension*/
+header img {
+  margin-left: 146%;
+  width: 20%;
+  height: auto;
+}
+
+
+header {
+  position: relative;
+  width: auto;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid #b1b1b1; */
+  background-color: rgba(141, 154, 226, 0.245);
+  z-index: 2;
+}
+
+header nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input_btn {
+  float: left;
+  width: 20%;
+  background: none;
+  cursor: pointer;
+  border: none;
+}
+
+header a {
+  padding: 20px;
+  font-size: 110%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffeeee;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+
+#Onirix_color
+{
+    color: rgb(0, 0, 100);
+}
+
+#Onirix_color:hover
+{
+    color: white;
+}
+
+header a:hover {
+  font-size: 115%;
+  color: rgb(0, 0, 0);
+}
+
+.right_side {
+  position: fixed;
+  margin-left: 80%;
+  white-space: nowrap;
+}
+
+.left_side 
+{
+    position: fixed;
+}

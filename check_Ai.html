@@ -4,7 +4,7 @@
 
     <script src="/js/ai.js"></script>
   </head>
-  <body>
+  <body onload="OnLoad()">
     <div id="idContainer">
       <textarea
         id="txtOutput"
@@ -15,6 +15,26 @@
 
       <div>
         <button type="button" onclick="Send()" id="btnSend">Send</button>
+        <label id="lblSpeak"
+          ><input
+            id="chkSpeak"
+            type="checkbox"
+            onclick="SpeechToText()"
+          />Listen</label
+        >
+        <label id="lblMute"
+          ><input
+            id="chkMute"
+            type="checkbox"
+            onclick="Mute(this.checked)"
+          />Mute</label
+        >
+
+        <select id="selLang" onchange="ChangeLang(this)">
+          <option value="en-US">English (United States)</option>
+          <option value="fr-FR">French (France)</option>
+        </select>
+
       </div>
 
       <textarea
