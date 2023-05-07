@@ -1,4 +1,3 @@
-
 <?php
 //Ouputs the header for the page and opening body tag
 function outputHeader($title)
@@ -9,21 +8,70 @@ function outputHeader($title)
     echo '<title>' . $title . '</title>';
 
     //Link to external style sheet
+    $css = array("header", "style", "footer", "registration");
+
+
+    for ($i = 0; $i < count($css); $i++) {
+
+
+        echo '<link rel="stylesheet" type="text/css" href="./CSS/' . $css[$i] . '.css">';
+    }
+    echo'<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.5.0/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.5.0/dist/sweetalert2.min.css">
+    <script src="./js/registration.js"></script>';
+    echo '</head>';
+    echo '<body>';
     
-  $path = './CSS/footer.css';
-  echo '<link href="' . $path . '" type="text/css" rel="stylesheet">
-    </head>';
-    echo '<body>
-    <a id="top"></a>';
+}
+
+function outnav($title)
+{
+    echo '<header>
+    <nav>
+      <div class="left_side">';
+    if ($title == "Home") {
+        echo '<a href="#">Themes</a>
+        <a href="#" id="Onirix_color">Try Onirix</a>
+        </div>
+        <div class="right_side">
+        <a id="my_Btn">MY ACCOUNT</a>
+        <a href="#">About Us</a>
+      </div>';
+    } else if ($title == "Themes") {
+        echo '<a href="#">Home</a>
+        <a href="#" id="Onirix_color">Try Onirix</a>
+        </div>
+        <div class="right_side">
+        <a href="#">MY ACCOUNT</a>
+        <a href="#">About Us</a>
+      </div>';
+    } else {
+        echo '<a href="#">Theme</a>
+        <a href="#">Home</a>
+        </div>
+        <div class="right_side">
+        <a href="#" >MY ACCOUNT</a>
+        <a href="#">About Us</a>
+      </div>';
+    }
+    echo ' <img
+    class="header_img"
+    src="./assets/Onirix-logo.png"
+    alt="logo-header"
+  />
+  </nav>
+  </header>';
 }
 
 
 //Outputs closing body tag and closing HTML tag
-function outputFooter() 
+function outputFooter()
 {
     //go back to the top button
     echo '<a id="myBtn" href=#top ><img style="float:right;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQ9JREFUSEvlleEVwUAQhGc6UAIVoAJSASpBBagAlUgHdIAKKEEH4613ySPJ5SKJX/bv3c7sfjcvIX5c/LE+/shAUgfA0SGNSD6q4K2MSNIOwNyJ7kkuWjOQNH6bPtG1LU4hk+AGDs0ZQDcjdgcwDKGqYhADmHgmjUnOyrYoNZA0BXAIYJiRtCEKy2vg0NwAWHrKytLU86EqM7AHHIUe0Z2fSEZFdwsNJFkEtxXFk2tLkhblj8oZSLK0WGpCaLJahspSZelKq8jgAqD/5fTJ9QvJoddA0hrAqqZ40rYhaTqvSjeQNHBoGuq/2g2VkfgwaIImO1SK6n2DNg2uJI3IP/1w6r588GtaVzgX06ZCvv4njFZOGRx3fOkAAAAASUVORK5CYII="></a>';
-    echo '<script src="../js/common.js"></script>';
+    echo '<script src="./js/common.js"></script>
+    <script src="./js/js.js"></script>';
     echo '</body>';
     echo '<footer>
 		<div class="footer">
@@ -74,5 +122,3 @@ function outputFooter()
 	</footer>
     </html>';
 }
-
-?>
